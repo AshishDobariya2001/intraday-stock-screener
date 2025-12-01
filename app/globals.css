@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-secondary hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded;
+}
+
+.badge-danger {
+  @apply bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded;
+}
